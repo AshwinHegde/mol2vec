@@ -174,8 +174,9 @@ def _parallel_job(mol, r):
     if mol is not None:
         smiles = Chem.MolToSmiles(mol)
         mol = Chem.MolFromSmiles(smiles)
-        sentence = mol2alt_sentence(mol, r)
-        return " ".join(sentence)
+        if mol is not None:
+            sentence = mol2alt_sentence(mol, r)
+            return " ".join(sentence)
 
 
 def _read_smi(file_name):
