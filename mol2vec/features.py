@@ -226,12 +226,15 @@ def generate_corpus(in_file, out_file, r, sentence_type='alt', n_jobs=1):
     if (sentence_type == 'individual') or (sentence_type == 'all'):
         
         f1 = open(out_file+'_r0.corpus', "w")
+        print(out_file+'_r0.corpus', ' opened for write(all).')
         f2 = open(out_file+'_r1.corpus', "w")
+        print(out_file+'_r1.corpus', ' opened for write(all).')
         file_handles.append(f1)
         file_handles.append(f2)
 
     if (sentence_type == 'alt') or (sentence_type == 'all'):
         f3 = open(out_file, "w")
+        print(out_file, ' opened for write(alt).')
         file_handles.append(f3)
     
     if gzipped:
